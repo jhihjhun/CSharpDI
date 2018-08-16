@@ -8,7 +8,7 @@
 |[InversionOfControl](InversionOfControl/readme.md)|程式執行流程反轉控制 Inversion of Control 之情境練習|共有兩個專案，分別是：主控制台應用專案 ControOverTheFlowOfAProgram 與 WPF 的 GUI 事件驅動專案 InversionTheFlowOfProgram|
 |[InversionOfControlOO](InversionOfControlOO/readme.md)|物件導向設計之反轉控制 Inversion of Control 之情境練習|練習如何在物件導向設計中進行反轉控制、學習工廠方法之設計模式的用法|
 |[DependencyInversion](DependencyInversion/readme.md)|相依反轉原則 DIP 之情境練習|違反 DIP 的例子 與 使用抽象型別解決此一問題|
-|[PoorManDI](DependencyInversion/readme.md)|窮人 DI (或稱 Pure DI) 練習|設計出一個 DI 機制，具有註冊抽象型別與具體型別能力，並且可以解析出抽象型別的具體實作物件|
+|[PoorManDI](PoorManDI/readme.md)|窮人 DI (或稱 Pure DI) 練習|設計出一個 DI 機制，具有註冊抽象型別與具體型別能力，並且可以解析出抽象型別的具體實作物件|
 |[FirstUnity](FirstUnity/readme.md)|DI 容器的使用 : Unity|(`體驗使用五種 DI / IoC Container 容器用法`) 體驗如何安裝與使用 Unity 之 IoC Container|
 |[FirstAutofac](FirstAutofac/readme.md)|DI 容器的使用 : Autofac|(`體驗使用五種 DI / IoC Container 容器用法`) 體驗如何安裝與使用 Autofac 之 IoC Container|
 |[FirstStructureMap](FirstStructureMap/readme.md)|DI 容器的使用 : StructureMap|(`體驗使用五種 DI / IoC Container 容器用法`) 體驗如何安裝與使用 StructureMap 之 IoC Container|

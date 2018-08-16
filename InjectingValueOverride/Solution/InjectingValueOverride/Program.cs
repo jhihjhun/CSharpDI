@@ -89,9 +89,15 @@ namespace InjectingValueOverride
     {
         static void Main(string[] args)
         {
+            // 這裡將會建立 DI 容器
             IUnityContainer container = new UnityContainer();
+
+            // 進行抽象型別與具體實作類別的註冊
             container.RegisterType<IMyInterface, DefaultClass>();
             container.RegisterType<IMyInterface, NewClass>("New");
+
+            // ConsoleMessage 類別內有 4 個建構式
+            // 使用 InjectionConstructor 指定使用哪個建構式
             container.RegisterType<IMessage, ConsoleMessage>(
                 new InjectionConstructor("Vulcan", 50, typeof(IMyInterface)),
                 new InjectionProperty("Cost", 999.168),
@@ -99,6 +105,8 @@ namespace InjectingValueOverride
                 );
 
             #region 手動解析出一個物件，並且該物件作為其他要注入物件需要注入的參考物件
+
+            // 進行抽象型別的具體實作物件的解析
             IMyInterface newClass = container.Resolve<IMyInterface>("New");
             IMessage messageResolveOverride =
                 container.Resolve<IMessage>(
@@ -106,6 +114,8 @@ namespace InjectingValueOverride
                     new ParameterOverride("age", 99),
                     new ParameterOverride("myInterface", newClass),
                     new PropertyOverride("Cost", 168.123));
+
+            // 執行取得物件的方法
             messageResolveOverride.Write("Hi Vulcan");
 
             Console.WriteLine("Press any key for continuing...");
@@ -113,6 +123,8 @@ namespace InjectingValueOverride
             #endregion
 
             #region 使用 typeof 來指定要覆寫注入具體實作物件 (搭配 DependencyOverride ，就無需一一指定)
+
+            // 進行抽象型別的具體實作物件的解析
             IMessage messageResolveOverride2 =
                 container.Resolve<IMessage>(
                     new ParameterOverride("name", "Will"),
