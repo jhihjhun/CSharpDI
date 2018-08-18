@@ -6,25 +6,31 @@ using System.Threading.Tasks;
 
 namespace DependencyInversion
 {
-    public class Email
+    public class Email : IMessage
     {
         public void Send() { }
     }
 
     public class Notification
     {
-        private Email _Email;
+        private IMessage _Email;
         public Notification()
         {
             _Email = new Email();
         }
+
+        public void Init(IMessage message)
+        {
+            _Email = message;
+        }
+
         public void Notify() { _Email.Send(); }
     }
 
     class Program
     {
         static void Main(string[] args)
-        {
+        {        
         }
     }
 }
