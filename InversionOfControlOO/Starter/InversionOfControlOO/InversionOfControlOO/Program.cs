@@ -27,10 +27,27 @@ namespace InversionOfControlOO
         }
     }
 
+    static class Factory
+    {
+        public static EmailService GetEmailService()
+        {
+            return new EmailService();
+        }
+        public static SMSService GetSMSService()
+        {
+            return new SMSService();
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
+            //EmailService emailService = new EmailService();
+            //emailService.Send();
+
+            IMessage message = Factory.GetEmailService();
+            message.Send();
         }
     }
 }
